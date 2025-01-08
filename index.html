@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M19</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;}
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select {font-size: 1em; padding: 5px;}
+        .activity { margin-bottom: 20px; }
+         .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+             const activity4Step6 = document.getElementById('activity-4-step-6');
+             const activity4Step7 = document.getElementById('activity-4-step-7');
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                 if (activity4Step6) activity4Step6.style.display = 'block';
+                if (activity4Step7) activity4Step7.style.display = 'block';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if (activity4Step6) activity4Step6.style.display = 'none';
+                if (activity4Step7) activity4Step7.style.display = 'none';
+            } else {
+                activity2.style.display = 'block';
+                if (activity4Step6) activity4Step6.style.display = 'block';
+                if (activity4Step7) activity4Step7.style.display = 'block';
+            }
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P1-M19</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+         <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            <strong>Paso 1:</strong> Proyectar la diapositiva 1 "Revisión de Misión". Verificar que:
+                            <ul>
+                                <li>Los dispositivos están encendidos y tienen acceso a Scratch Jr.</li>
+                                <li>Las Magic Tablets estén disponibles.</li>
+                                 <li>Un set de Legos esté en el lugar de cada estudiante.</li>
+                                <li>El espacio de trabajo esté organizado.</li>
+                            </ul>
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">N/A</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2.5">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 2 "¡Bienvenidos, Exploradores Submarinos!". Saludar a los estudiantes con entusiasmo y energía.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Hola, Genios! 🌊 ¡Bienvenidos a una nueva misión, esta vez nos sumergiremos en las profundidades del océano! Hoy vamos a descubrir criaturas marinas increíbles y programar nuestras propias aventuras submarinas. ¿Están listos para explorar? ¡Vamos a sumergirnos juntos!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 3 "¿Cómo se sienten hoy, exploradores?". Mostrar opciones visuales de poses temáticas (Burbuja Flotante y Pez Curioso) con un zorro de plastilina. Pedir que representen cómo se sienten usando estas poses.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores! Muéstrenme cómo se sienten hoy: - Si están emocionados y listos para explorar como una burbuja flotando en el agua, hagan la Pose de Burbuja Flotante (eleven los brazos y muevan las manos suavemente 🫧). - Si están curiosos y atentos como un pez explorando el arrecife, hagan la Pose de Pez Curioso (inclinen la cabeza hacia un lado con los ojos bien abiertos 👀). ¡Muéstrenme sus poses!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0,5 minutos):</strong> Proyectar la diapositiva 4 "Ritual de Agradecimiento Submarino". Guiar a los estudiantes para realizar el ritual en conjunto.</td>
+                         <td style="padding: 10px; vertical-align: top;">"Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios! Hoy vamos a sumergirnos en el océano, programar aventuras y divertirnos mucho. ¡A explorar las profundidades!'"</td>
+                     </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0,5 minutos):</strong> Proyectar la diapositiva 5 "Objetivos de la Misión Submarina". Enumerar los objetivos de la misión en un formato claro y motivador.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Hoy tenemos una misión submarina, Genios: <br> <strong>1.</strong> Usar bloques de movimiento y espera para explorar el océano. <br> <strong>2.</strong> Diseñar escenas con submarinos y criaturas marinas. <br> <strong>3.</strong> Compartir nuestras aventuras y aprender juntos. ¡Será una misión acuática épica!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Construcción de submarinos creativos con bloques de Lego para fomentar la imaginación y la motricidad.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 6 "¡A construir Submarinos!". Introducir la idea de construir submarinos con los bloques de Lego para activar la creatividad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es momento de usar nuestra creatividad! 🚀 Vamos a construir nuestros propios submarinos con los bloques de Lego. Imaginen cómo se mueven en el agua y qué aventuras vivirán. ¿Están listos para crear máquinas submarinas geniales?"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1,5 minutos):</strong> Guiar a los estudiantes para que utilicen sus seis bloques de Lego y construyan un submarino que represente su imaginación: - Diseñar la cabina, los propulsores y la estructura del submarino. - Animarles a pensar en las características de su submarino (¿tiene aletas?, ¿es un vehículo rápido?, ¿lleva torpedos?).</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ahora es su turno, Genios! Usen sus seis bloques para construir un submarino único. - ¿Qué características tiene? ¿Tiene aletas, propulsores, torpedos? - ¿Cómo se mueve? ¿Es rápido como un rayo o lento como una tortuga? - ¿Qué parte del submarino crearán primero? ¡Manos a la obra!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (2 minutos):</strong> Proyectar la diapositiva 8 "Submarinos en Movimiento". Pedir a los estudiantes que imiten los movimientos y sonidos de sus submarinos mientras caminan con sus construcciones y que compartan una breve descripción con el grupo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Démosles vida a nuestros submarinos! 🌊 Cada uno caminará por el aula con su creación mientras imita su movimiento y sonido: - Si su submarino es rápido, corran suavemente. - Si es lento, caminen despacio. - Compartan una descripción breve de su submarino. ¿Cómo se llama? ¿Qué función tiene? ¿Qué aventura le gustaría vivir? ¿Y su sonido? ¿Un burbujeo o un motor? ¡Muestren lo que han creado!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="22.5">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 22.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Resolución de retos prácticos para programar movimientos y animaciones en Scratch Jr.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 9 "¡Hora del Desafío Submarino!". Explicar a los estudiantes que trabajarán en retos relacionados con movimientos y animaciones en Scratch Jr.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Exploradores, llegó el momento más emocionante! 🚀 Hoy vamos a programar aventuras en las profundidades del océano. Hay tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>. ¡Elijan su nivel y prepárense para descubrir criaturas marinas increíbles!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar la diapositiva 10 "Niveles del Desafío". Explicar claramente los objetivos, instrucciones, <span style="color: red; font-weight: bold;">condiciones</span>, y un <span style="color: red; font-weight: bold;">consejo</span> útil para cada nivel.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Aquí están los desafíos, Exploradores! 🌊 <br><br> <strong>Nivel Rookie: 'Explorador del Coral'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar al submarino para moverse en un recorrido sencillo alrededor de un arrecife de coral. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Crea un fondo submarino usando las herramientas de dibujo o selecciona uno prediseñado. Añade un submarino como personaje en Scratch Jr. Programa el movimiento del submarino paso a paso para que forme un rectángulo alrededor del arrecife (por ejemplo: avanzar, girar, avanzar). Repite manualmente la secuencia si es necesario para completar dos vueltas. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> Usa solo bloques de movimiento básicos. Asegúrate de que el submarino complete el recorrido sin salirse del fondo. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Divide cada lado del recorrido en instrucciones cortas (moverse adelante, girar) y ajusta la cantidad de pasos probando cada segmento. <br><br> <strong>Nivel Master: 'Cazador de Criaturas'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Mover al submarino para buscar tres criaturas marinas y 'saludarlas'. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Dibuja un fondo con tres criaturas marinas distribuidas en diferentes posiciones o usa personajes de la biblioteca. Añade un submarino como personaje. Programa al submarino para que se mueva hasta cada criatura, haciendo pausas (usando bloques de espera) para 'saludarlas'. Cuando el submarino llegue a cada criatura, haz que el submarino realice una acción especial, como un giro o un sonido. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> Cada movimiento debe llevar al submarino cerca de una criatura. No utilices bloques de repetición o lógica, solo secuencias simples de movimiento. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Usa el bloque de 'esperar' antes de realizar la acción especial para destacar el momento en que el submarino encuentra a cada criatura. <br><br> <strong>Nivel Hacker: 'El Tesoro Perdido'</strong> <br><br> -  <span style="color: red; font-weight: bold;">Objetivo:</span> Diseñar un pequeño recorrido tipo laberinto y guiar al submarino hasta el tesoro. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Usa las herramientas de dibujo para crear un fondo con paredes o obstáculos que simulen un laberinto sencillo. Coloca un tesoro (o un personaje que lo represente) al final del recorrido. Programa al submarino para moverse paso a paso evitando los obstáculos y llegando al tesoro. Al encontrar el tesoro, haz que el submarino realice un festejo animado, como movimientos o sonidos. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> Si el submarino toca una pared u obstáculo, el estudiante debe reajustar manualmente la secuencia. El submarino debe llegar al tesoro siguiendo un camino claro. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Planifica el recorrido del submarino en pequeños tramos y ajusta los movimientos antes de avanzar."</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar la diapositiva 11 "Manos a la Obra". Supervisar a los estudiantes mientras trabajan, ayudándolos a cumplir las <span style="color: red; font-weight: bold;">condiciones</span> y resolver dudas.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Es hora de programar! Elijan su nivel: - <strong>Rookie</strong>: Exploren el arrecife de coral. - <strong>Master</strong>: ¡Saluden a las criaturas marinas! - <strong>Hacker</strong>: ¡Encuentren el tesoro perdido! ¡Muestren su creatividad y habilidades!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar la diapositiva 12 "Reflexionemos Juntos". Facilitar que los estudiantes muestren sus proyectos y expliquen cómo lograron cumplir con las <span style="color: red; font-weight: bold;">condiciones</span> de cada nivel.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Exploradores, qué trabajo tan increíble! 🌊 Ahora compartamos nuestras creaciones: - <strong>Rookie</strong>: ¿Cómo exploraron el arrecife y qué obstáculos encontraron? - <strong>Master</strong>: ¿Cómo saludaron a las criaturas marinas y qué acciones especiales usaron? - <strong>Hacker</strong>: ¿Cómo encontraron el tesoro y qué festejo hicieron? ¡Inspírense unos a otros!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7.5">
+             <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Formación de equipos y colaboración para evaluar el desempeño de los proyectos.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 13 "Formación de Equipos Submarinos". Pedir a los estudiantes que formen equipos con compañeros cercanos para realizar la actividad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es hora de trabajar en equipo! 🌊 Formen grupos de 2 o 3 con compañeros cercanos. Estos serán sus equipos para revisar y mejorar sus proyectos. ¡Vamos a demostrar el poder de la colaboración acuática!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 14 "Organización de Roles". Pedir a los equipos que distribuyan roles: - Líder del Proyecto. - Observador Crítico. - Creativo Innovador.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Cada equipo necesita un buen plan! 🌟 Decidan juntos quién será: <br><br> - <strong>Líder del Proyecto:</strong> Coordina y guía al equipo. <br><br> - <strong>Observador Crítico:</strong> Revisa los detalles y busca áreas de mejora. <br><br> - <strong>Creativo Innovador:</strong> Propone ideas geniales para hacer únicos los proyectos. ¡Organícense en un minuto!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar la diapositiva 15 "Recoge tus Herramientas Submarinas". Pedir a los estudiantes que recojan Magic Tablets u otros materiales necesarios.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, recojan sus herramientas mágicas! 🌟 Cada equipo necesitará Magic Tablets u otros materiales para trabajar y registrar sus ideas. ¡Tienen 30 segundos para prepararse!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar la diapositiva 16 "Revisión Acuática". Pedir a los estudiantes que observen los proyectos de sus compañeros y respondan a preguntas clave para proporcionar retroalimentación.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Es hora de explorar los proyectos de sus compañeros! 🌟 Observen con atención y respondan estas preguntas: - ¿Qué les gustó más de su proyecto? - ¿Qué pueden mejorar para que sea aún más emocionante? - ¿Qué aprendieron de su equipo? ¡Sean curiosos y constructivos!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar la diapositiva 17 "Turno de Maestro Submarino". Pedir a los estudiantes que se turnen para explicar sus proyectos y recibir preguntas.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Exploradores, ahora es su turno de ser Maestros Submarinos! 🌊 Por turnos, expliquen cómo diseñaron sus proyectos: - Qué movimientos y sonidos usaron. - Qué desafíos encontraron. - Qué los hace únicos. El resto del equipo hará preguntas para aprender más. ¡Luego cambien de rol!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-6">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (3 minutos):</strong> Proyectar la diapositiva 18 "Ajustes en Equipo". Dar tiempo a los equipos para trabajar juntos en los ajustes sugeridos durante la revisión.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ahora, exploradores, hagamos nuestros proyectos aún mejores! 🚀 Tomen las ideas compartidas y ajusten sus animaciones. Recuerden, cada pequeño cambio puede hacer la diferencia. ¡Trabajen juntos y brillen aún más!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-7">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (2 minutos):</strong> Proyectar la diapositiva 19 "Reflexión en Equipo". Facilitar preguntas como: - ¿Qué aprendieron de trabajar juntos? - ¿Cómo mejoraron sus proyectos gracias a sus compañeros? - ¿Qué fue lo más divertido?</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, reflexionemos sobre esta experiencia acuática! 🌊 - ¿Qué aprendieron trabajando juntos? - ¿Qué mejoraron gracias a las ideas de sus compañeros? - ¿Qué fue lo más divertido de esta misión? ¡El trabajo en equipo es increíble!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="4.5">
+             <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor de Lab ⏰ Tiempo: 4.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Reflexión final y organización del espacio de trabajo para cerrar con respeto y orden.
+                </div>
+            </div>
+            <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 20 "Revisión de Objetivos". Guiar a los estudiantes en una breve reflexión grupal sobre lo aprendido y logrado durante la clase.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores Submarinos, qué misión tan increíble completaron hoy! 🌊 Reflexionemos juntos: - ¿Logramos nuestros objetivos? Sí, usamos bloques de movimiento y espera, exploramos el océano y trabajamos en equipo. ¡Todo gracias a su esfuerzo y creatividad! 🚀"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minutos):</strong> Realizar el reconocimiento de logros mediante un mensaje verbal motivador.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Felicidades, Exploradores! 🌟 Hoy se sumergieron en el océano y crearon aventuras submarinas increíbles. Cada animación y cada movimiento que programaron nos llevó a las profundidades marinas. Recuerden: ¡ustedes tienen el poder de construir aventuras únicas! ¡Nos vemos en nuestra próxima misión!"</td>
+                    </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar la diapositiva 21 "Organización del Espacio". Pedir a los estudiantes que devuelvan los materiales (Magic Tablets, bloques de Lego, etc.) a su lugar correspondiente. Supervisar mientras lo hacen.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Exploradores, antes de regresar a la superficie, debemos dejar nuestro laboratorio listo para la próxima misión. 🌟 Por favor, devuelvan las Magic Tablets, bloques y cualquier otro material que usaron. Recuerden, ¡un espacio limpio nos ayuda a aprender mejor! 🚀"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
